@@ -71,7 +71,7 @@ export function PersistentContent() {
             <div className="t-center t-left@sm relative js-content-toggle | js-reveal-anim">
               <div data-content="general" className="js-content-toggle-section">
                 <div className="t-normal mb-1 t-center overflow-hidden t-left@sm">
-                  <a href="mailto:hello@nocturne.studio" className="t-lh-1 t-2 t-no-underline t-300 d-block arrow-link arrow-link--large" data-cursor="hide"><span><span><span>{"\u2B61\u00A0\u00A0"}</span></span>hello@nocturne.studio</span></a>
+                  <a href="mailto:hello@nocturne.co" className="t-lh-1 t-2 t-no-underline t-300 d-block arrow-link arrow-link--large" data-cursor="hide"><span><span><span>{"\u2B61\u00A0\u00A0"}</span></span>hello@nocturne.co</span></a>
                 </div>
                 <div className="d-flex flex-column flex-row@sm">
                   <div className="mr-2@sm">
@@ -93,7 +93,7 @@ export function PersistentContent() {
               <div className="w-1/1 absolute top js-content-toggle-section" data-content="new-business">
                 <div>
                   <div className="t-normal overflow-hidden mb-0.25">
-                    <a href="mailto:projects@nocturne.studio" className="t-lh-1.1 t-2 t-no-underline t-300 d-block arrow-link arrow-link--large" data-cursor="hide"><span><span><span>{"\u2B61\u00A0\u00A0"}</span></span>projects@nocturne.studio</span></a>
+                    <a href="mailto:projects@nocturne.co" className="t-lh-1.1 t-2 t-no-underline t-300 d-block arrow-link arrow-link--large" data-cursor="hide"><span><span><span>{"\u2B61\u00A0\u00A0"}</span></span>projects@nocturne.co</span></a>
                   </div>
                 </div>
               </div>

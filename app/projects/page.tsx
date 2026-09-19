@@ -20,9 +20,9 @@ export default function ProjectsPage() {
       <div className="project-grid-cta | js-project-grid-cta">
         <p>Looking for a creative partner for your project?</p>
         <a
-          href="mailto:projects@nocturne.studio"
+          href="mailto:projects@nocturne.co"
           target="_blank"
-          title="projects@nocturne.studio"
+          title="projects@nocturne.co"
           className="btn btn--regular btn--fill btn--dark js-btn"
           data-btn="fill"
           data-cursor="hide"
@@ -30,7 +30,7 @@ export default function ProjectsPage() {
           <span className="btn__inner js-btn-inner">
             <span className="btn__content js-btn-content">
               <span className="d-flex flex-row items-end">
-                <span className="btn__text">projects@nocturne.studio</span>
+                <span className="btn__text">projects@nocturne.co</span>
                 <svg className="btn__icon d-inline-block js-btn-icon">
                   <use href="#arrow"></use>
                 </svg>

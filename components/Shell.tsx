@@ -333,10 +333,10 @@ function Menu() {
               <a
                 className="d-block arrow-link js-menu-link"
                 data-audio-enter="audio.ratchet"
-                href="mailto:projects@nocturne.studio"
+                href="mailto:projects@nocturne.co"
                 data-cursor="hide"
               >
-                <ArrowLabel>projects@nocturne.studio</ArrowLabel>
+                <ArrowLabel>projects@nocturne.co</ArrowLabel>
               </a>
               <a
                 className="d-block arrow-link js-menu-link"
@@ -487,7 +487,7 @@ function Footer() {
       </button>
       <div className="footer__cta z-50 fixed d-flex justify-center justify-start@md js-footer-cta">
         <a
-          href="https://2025.nocturne.studio/"
+          href="https://2025.nocturne.co/"
           target="_blank"
           title="Our 2025 Wrapped"
           className="btn btn--regular btn--border btn--light js-rebrand-btn js-btn"
