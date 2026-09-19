@@ -25,7 +25,7 @@ import {
   Vector3,
   VideoTexture,
   WebGLRenderTarget,
-  WireframeGeometry,
+  EdgesGeometry,
 } from "three";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { SavePass } from "three/examples/jsm/postprocessing/SavePass.js";
@@ -744,7 +744,7 @@ export class World {
   }
 
   addSphere() {
-    const e = new WireframeGeometry(new SphereGeometry(1, 50, 28));
+    const e = new EdgesGeometry(new SphereGeometry(1, 50, 28));
     const t = new LineBasicMaterial({ color: 3881787 });
     this.sphere = new LineSegments(e, t);
     this.sphere.scale.setScalar(50);
