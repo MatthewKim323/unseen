@@ -7,7 +7,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 const DATA_DIR = path.join(process.cwd(), "lib/data/project-details");
-const SPRITE = "/assets/images/img-687f48138f.svg";
 
 interface ProjectDetail {
   slug: string;
@@ -202,7 +201,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
                           <span className="d-flex flex-row items-end">
                             <span className="btn__text">{ov.button.label}</span>
                             <svg className="btn__icon d-inline-block js-btn-icon">
-                              <use xlinkHref={`${SPRITE}#arrow`} />
+                              <use href="#arrow" />
                             </svg>
                           </span>
                         </span>

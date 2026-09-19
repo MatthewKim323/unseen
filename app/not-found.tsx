@@ -1,5 +1,4 @@
 // 404 view (source notFound template, data-router-view="notFound").
-const SPRITE = "/assets/images/img-687f48138f.svg";
 
 function Btn({ href, title, className }: { href: string; title: string; className: string }) {
   return (
@@ -9,7 +8,7 @@ function Btn({ href, title, className }: { href: string; title: string; classNam
           <span className="d-flex flex-row items-end">
             <span className="btn__text">{title}</span>
             <svg className="btn__icon d-inline-block js-btn-icon">
-              <use xlinkHref={`${SPRITE}#arrow`} />
+              <use href="#arrow" />
             </svg>
           </span>
         </span>

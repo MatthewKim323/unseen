@@ -154,7 +154,7 @@ export class Project {
       if (!o.projectToProjectTransition) o.Gl.composerPasses.add(o.Gl.fluidPass, 21);
       o.Gl.fluidSim.enable();
     }
-    o.Gl.fxaaPass.enabled = false;
+    if (o.Gl.fxaaPass) o.Gl.fxaaPass.enabled = false; // core Gl omits the dead FXAA pass
     if (o.projectToProjectTransition) {
       this.prevRenderPass.enabled = false;
       o.Gl.composerPasses.remove(this.prevRenderPass);
@@ -344,7 +344,7 @@ export class Project {
         o.Gl.fluidSim.disable();
       }
     }
-    o.Gl.fxaaPass.enabled = true;
+    if (o.Gl.fxaaPass) o.Gl.fxaaPass.enabled = true;
   }
 }
 
