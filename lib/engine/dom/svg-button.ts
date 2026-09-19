@@ -6,6 +6,43 @@ import { SVG } from "@svgdotjs/svg.js";
 import { store } from "../core/store";
 import { E } from "../core/event-bus";
 
+// gsap 3.6 (the source's version) permanently swapped an SVG element's getBBox for a "reparented" measurement
+// when the element reported an empty box (buttons built while inside the hidden .d-none block). The mask rect is
+// then measured inside a fresh default-size <svg> (300x150), so yPercent 120 resolves to 180px, which is what the
+// captured runtime DOM shows. gsap 3.15 no longer swaps the method, so reproduce that here.
+function patchBBox(el: SVGGraphicsElement) {
+  let b: DOMRect | undefined;
+  try {
+    b = el.getBBox();
+  } catch {
+    b = undefined;
+  }
+  if (b && (b.width || b.height)) return;
+  const native = el.getBBox.bind(el);
+  el.getBBox = function (): DOMRect {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    const parent = el.parentNode,
+      next = el.nextSibling,
+      css = el.style.cssText;
+    document.documentElement.appendChild(svg);
+    svg.appendChild(el);
+    el.style.display = "block";
+    let r: DOMRect;
+    try {
+      r = native();
+    } catch {
+      r = new DOMRect(0, 0, 0, 0);
+    }
+    if (parent) {
+      if (next) parent.insertBefore(el, next);
+      else parent.appendChild(el);
+    }
+    document.documentElement.removeChild(svg);
+    el.style.cssText = css;
+    return r;
+  };
+}
+
 export class SvgButton {
   static get selector() {
     return ".js-btn:not(.js-manager-ignore)";
@@ -123,6 +160,7 @@ export class SvgButton {
         o = this.canvas.mask().add(e2).add(s2);
       this.buildBtnBg.maskWith(o);
     }
+    this.dom.el.querySelectorAll<SVGGraphicsElement>(".js-btn-fill").forEach(patchBBox);
     gsap.set(this.dom.el.querySelectorAll(".js-btn-fill"), { yPercent: 120 });
   }
 
