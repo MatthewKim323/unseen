@@ -1,0 +1,157 @@
+{
+ "url": "http://localhost:3777/",
+ "ref": "reference/site",
+ "at": "2026-09-19T08:39:28.338Z",
+ "viewports": {
+  "desktop": {
+   "width": 1440,
+   "docHeight": {
+    "ref": 900,
+    "build": 900,
+    "ok": true
+   },
+   "sections": [
+    {
+     "name": "div",
+     "y": 267,
+     "ref": 366,
+     "build": 366,
+     "delta": 0,
+     "ok": true
+    },
+    {
+     "name": "div",
+     "y": 398,
+     "ref": 104,
+     "build": 104,
+     "delta": 0,
+     "ok": true
+    },
+    {
+     "name": "div",
+     "y": 398,
+     "ref": 104,
+     "build": 104,
+     "delta": 0,
+     "ok": true
+    }
+   ],
+   "consoleErrors": [],
+   "diff": null,
+   "pass": true
+  },
+  "tablet": {
+   "width": 1024,
+   "docHeight": {
+    "ref": 900,
+    "build": 900,
+    "ok": true
+   },
+   "sections": [
+    {
+     "name": "div",
+     "y": 251,
+     "ref": 398,
+     "build": 398,
+     "delta": 0,
+     "ok": true
+    },
+    {
+     "name": "div",
+     "y": 399,
+     "ref": 101,
+     "build": 101,
+     "delta": 0,
+     "ok": true
+    },
+    {
+     "name": "div",
+     "y": 399,
+     "ref": 101,
+     "build": 101,
+     "delta": 0,
+     "ok": true
+    }
+   ],
+   "consoleErrors": [],
+   "diff": null,
+   "pass": true
+  },
+  "tablet-810": {
+   "width": 810,
+   "docHeight": {
+    "ref": 900,
+    "build": 900,
+    "ok": true
+   },
+   "sections": [
+    {
+     "name": "div",
+     "y": 251,
+     "ref": 398,
+     "build": 398,
+     "delta": 0,
+     "ok": true
+    },
+    {
+     "name": "div",
+     "y": 399,
+     "ref": 101,
+     "build": 101,
+     "delta": 0,
+     "ok": true
+    },
+    {
+     "name": "div",
+     "y": 399,
+     "ref": 101,
+     "build": 101,
+     "delta": 0,
+     "ok": true
+    }
+   ],
+   "consoleErrors": [],
+   "diff": null,
+   "pass": true
+  },
+  "mobile": {
+   "width": 390,
+   "docHeight": {
+    "ref": 844,
+    "build": 844,
+    "ok": true
+   },
+   "sections": [
+    {
+     "name": "div",
+     "y": 223,
+     "ref": 398,
+     "build": 398,
+     "delta": 0,
+     "ok": true
+    },
+    {
+     "name": "div",
+     "y": 371,
+     "ref": 101,
+     "build": 101,
+     "delta": 0,
+     "ok": true
+    },
+    {
+     "name": "div",
+     "y": 371,
+     "ref": 101,
+     "build": 101,
+     "delta": 0,
+     "ok": true
+    }
+   ],
+   "consoleErrors": [],
+   "diff": null,
+   "pass": true
+  }
+ },
+ "pass": false,
+ "blackout": false
+}
