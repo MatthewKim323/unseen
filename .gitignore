@@ -47,3 +47,6 @@ reference/*/.origin.json
 reference/site/runtime/
 reference/site/capture/
 reference/site/screenshots/
+
+# uploaded media (1GB of video): kept out of git, served from disk / a blob store
+public/media/
