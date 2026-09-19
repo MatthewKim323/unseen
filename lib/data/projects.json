@@ -1314,8 +1314,7 @@
     "experiment"
    ],
    "description": "Interactive petal particles ",
-   "title": "Blossom ",
-   "link": "/labs/blossom/"
+   "title": "Blossom "
   },
   "images": [
    {
@@ -1343,8 +1342,7 @@
     "experiment"
    ],
    "description": "Cursor interaction",
-   "title": "Cellular",
-   "link": "/labs/cellular/"
+   "title": "Cellular"
   },
   "images": [
    {
@@ -1372,8 +1370,7 @@
     "experiment"
    ],
    "description": "WebGL Rain",
-   "title": "Cyber Rain",
-   "link": "/labs/webgl-rain/"
+   "title": "Cyber Rain"
   },
   "images": [
    {
@@ -1429,8 +1426,7 @@
     "experiment"
    ],
    "description": "Interactive water simulation",
-   "title": "Pool Life",
-   "link": "/labs/water-scene/"
+   "title": "Pool Life"
   },
   "images": [
    {
@@ -1458,8 +1454,7 @@
     "experiment"
    ],
    "description": "Interactive, Web-cam",
-   "title": "Optical Flow",
-   "link": "/labs/optical-flow/"
+   "title": "Optical Flow"
   },
   "images": [
    {

@@ -244,9 +244,11 @@ export class ProjectMenu {
     } else if (this.hoveredItem) {
       this.toProjectTransitionData.bgColor = this.hoveredItem.bgColor;
       this.toProjectTransitionData.lightMode = this.hoveredItem.lightMode;
-      this.hoveredItem.isExternal
-        ? window.open(this.hoveredItem.url, "_blank")
-        : store.Highway.redirect(this.hoveredItem.url, "toProject");
+      // source: external (`"0"`) opens a new tab. The experiment cards are external but their demos live
+      // on the original host, which the rebuild never links to, so they carry no link and stay put.
+      if (this.hoveredItem.isExternal) {
+        this.hoveredItem.url && window.open(this.hoveredItem.url, "_blank");
+      } else store.Highway.redirect(this.hoveredItem.url, "toProject");
     }
   };
 
