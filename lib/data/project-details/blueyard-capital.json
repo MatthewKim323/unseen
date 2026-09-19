@@ -1,0 +1,59 @@
+{
+ "slug": "blueyard-capital",
+ "title": "BlueYard Capital - Nocturne Studio®",
+ "description": "",
+ "bodyClass": "project-template-default",
+ "lightMode": false,
+ "currentProjectMenuId": 0,
+ "bgColor": "#FFFFFF",
+ "clientLine": "Client &amp; Us",
+ "header": {
+  "projectsText": "Projects/",
+  "title": "BlueYard Capital",
+  "description1": "Short",
+  "description2": "Description",
+  "model": {
+   "src": "/media/375363856989.glb",
+   "scale": "1"
+  }
+ },
+ "overview": {
+  "heading": "Project Overview",
+  "html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna mauris, porttitor accumsan maximus id, placerat eget dolor. Nam sit amet gravida neque.",
+  "servicesLabel": "Services",
+  "servicesHtml": "Service 1<br/>Service 2<br/>Service 3",
+  "button": null,
+  "details": [
+   {
+    "label": "Date",
+    "html": "January, 2020"
+   },
+   {
+    "label": "Client",
+    "html": "–"
+   },
+   {
+    "label": "Location",
+    "html": "–"
+   }
+  ]
+ },
+ "blocksHtml": "",
+ "footer": {
+  "nextLink": "/projects/blueyard-capital",
+  "nextLightMode": "",
+  "nextColor": "#000000",
+  "footerNextColor": "#000000",
+  "keepScrollingColor": "#000000",
+  "nextTitle": "BlueYard Capital",
+  "progressColor": "#000000",
+  "progressNextColor": "#000000",
+  "nextModel": {
+   "src": "/media/375363856989.glb",
+   "scale": "1",
+   "lightMode": "false"
+  },
+  "nextBgColor": "#FFFFFF",
+  "planeNextBgColor": "#FFFFFF"
+ }
+}

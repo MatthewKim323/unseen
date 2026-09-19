@@ -8,8 +8,11 @@ export function registerProjectsDevEnter() {
   onBoot(() => {
     if (store.Router || !/^\/projects\/?$/.test(location.pathname)) return;
     store.ProjectMenu.firstLoad = true;
+    if (!store.Cursor) store.Cursor = { hideEnter() {}, hideLeave() {} };
     setTimeout(() => {
       (store.AssetLoader.loaded || Promise.resolve()).then(() => {
+        // another scene's build may throw inside onFirstAssetsLoad before ProjectMenu.preBuild runs
+        if (!store.ProjectMenu.renderPass) store.ProjectMenu.preBuild();
         store.ProjectMenu.build(true);
         (store.PageLoader?.hiddenPromise || Promise.resolve()).then(() => {
           store.ProjectMenu.in();

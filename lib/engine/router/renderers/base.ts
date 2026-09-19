@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Highway 2.2.0 `Renderer` (vendor.js, `i`) + BaseRenderer (source `wo`, theme.js 14967-15159).
-// BaseRenderer.onFirstLoad is the app boot (ASScroll, managers, scenes); see router/README.md for the
-// contract with lib/engine/boot.ts (it injects the manager constructors via `setEngineFactory`).
+// BaseRenderer.onFirstLoad is the source app boot. lib/engine/boot.ts runs the construction half before
+// it constructs the Router; the renderer runs the first-view half. Contract: router/README.md.
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ASScroll from "@ashthornton/asscroll";
@@ -78,7 +78,7 @@ export class Renderer {
 }
 
 /**
- * Constructs, in source order, everything between `ASScroll` and the `RAFCollection.add` line of
+ * Optional (standalone use only; lib/engine/boot.ts constructs the managers itself). Constructs, in source order, everything between `ASScroll` and the `RAFCollection.add` line of
  * `onFirstLoad`: RAFCollection, FPSChecker, AssetLoader, TextLoader, Dom2WebglObserver, PageLoader,
  * NakedLoader, ScrollAnimations, TaskScheduler, Gl (+addPasses), Audio, Dom2Webgl, CustomEase
  * "projectMenuToProject", HomeContact, ProjectMenu, ProjectFilters, World, Navigation, Menu,
@@ -93,7 +93,7 @@ export function setEngineFactory(factory: EngineFactory) {
 
 /** BaseRenderer (`wo`). */
 export class BaseRenderer extends Renderer {
-  page!: HTMLElement;
+  page!: any; // HTMLElement (loosely typed: subclasses assign wrap.lastElementChild directly)
   buttons!: ComponentManager;
   video!: ComponentManager;
   muteToggles!: ComponentManager;
@@ -122,27 +122,31 @@ export class BaseRenderer extends Renderer {
   };
 
   onFirstLoad() {
-    gsap.registerPlugin(ScrollTrigger);
-    store.ASScroll = new ASScroll({
-      disableRaf: true,
-      disableResize: true,
-      touchScrollType: "transform",
-      lockIOSBrowserUI: false,
-      disableNativeScrollbar: false,
-      limitLerpRate: false,
-    });
-    if (!engineFactory) throw new Error("router: setEngineFactory() was not called before the first render");
-    engineFactory();
-    store.RAFCollection!.add(store.ASScroll.update, 0);
-    store.ASScroll.on("update", ScrollTrigger.update);
-    ScrollTrigger.addEventListener("refresh", store.ASScroll.resize);
-    if (store.urlParams.has("mobilerecording")) {
-      const px = parseFloat(store.urlParams.get("mobilerecording") || "150");
-      ($(".header") as HTMLElement).style.top = `${px}px`;
-      ($(".js-global-mute-btn") as HTMLElement).style.bottom = `${px}px`;
-      ($(".js-footer-cta") as HTMLElement).style.bottom = `${px}px`;
-      ($(".js-world-btn") as HTMLElement).style.bottom = `${px}px`;
-      ($(".js-footer-cr") as HTMLElement).style.bottom = `${px}px`;
+    // lib/engine/boot.ts already ran this block (ASScroll, every manager, RAF/ScrollTrigger wiring,
+    // ?mobilerecording) before constructing the Router; only run it here when nothing did.
+    if (!store.RAFCollection) {
+      gsap.registerPlugin(ScrollTrigger);
+      store.ASScroll = new ASScroll({
+        disableRaf: true,
+        disableResize: true,
+        touchScrollType: "transform",
+        lockIOSBrowserUI: false,
+        disableNativeScrollbar: false,
+        limitLerpRate: false,
+      });
+      if (!engineFactory) throw new Error("router: no engine factory and boot did not construct the managers");
+      engineFactory();
+      store.RAFCollection!.add(store.ASScroll.update, 0);
+      store.ASScroll.on("update", ScrollTrigger.update);
+      ScrollTrigger.addEventListener("refresh", store.ASScroll.resize);
+      if (store.urlParams.has("mobilerecording")) {
+        const px = parseFloat(store.urlParams.get("mobilerecording") || "150");
+        ($(".header") as HTMLElement).style.top = `${px}px`;
+        ($(".js-global-mute-btn") as HTMLElement).style.bottom = `${px}px`;
+        ($(".js-footer-cta") as HTMLElement).style.bottom = `${px}px`;
+        ($(".js-world-btn") as HTMLElement).style.bottom = `${px}px`;
+        ($(".js-footer-cr") as HTMLElement).style.bottom = `${px}px`;
+      }
     }
     this.onEnter();
     E.on("AssetLoader:beforeResolve", this.onFirstAssetsLoad);

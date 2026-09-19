@@ -30,7 +30,7 @@ export class WebGLItem extends Group {
 
   constructor(e: WebGLItemOptions) {
     super();
-    this.options = { name: "", domEl: null, assetType: null, ...e };
+    this.options = Object.assign({ name: "", domEl: null, assetType: null }, e);
     if (this.options.item) {
       this.item = this.options.item;
       this.add(this.item);

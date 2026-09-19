@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MathUtils } from "three";
 import { store } from "../core/store";
+import { registerGlProps } from "../core/gl-props";
 import { effects } from "./effects";
 
 const o: any = store;
@@ -163,18 +164,7 @@ export class ScrollAnimations {
 
   registerGsapPlugins() {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin({
-      name: "glProps",
-      init(this: any, e: any, t: any) {
-        for (const i in t)
-          if ("object" != typeof t[i]) this.add(e._glProps, i, e._glProps[i], t[i]);
-          else
-            for (const s in t[i]) {
-              this.add(e._glProps[i], s, e._glProps[i][s], t[i][s]);
-              this._props.push(s);
-            }
-      },
-    } as any);
+    registerGlProps();
   }
 
   destroy() {
