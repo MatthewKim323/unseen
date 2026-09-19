@@ -91,9 +91,16 @@ function firstLoad() {
  * (those need dom classes; the router's BaseRenderer does them). Exported so the router can reuse it.
  */
 export function onFirstAssetsLoadCore(onEnterCompleted?: () => void) {
-  store.HomeContact?.build?.();
-  store.ProjectMenu?.preBuild?.();
-  store.World?.buildIntro?.();
+  const guard = (label: string, fn: () => void) => {
+    try {
+      fn();
+    } catch (err) {
+      console.error(`[engine] ${label} failed`, err);
+    }
+  };
+  guard("HomeContact.build", () => store.HomeContact?.build?.());
+  guard("ProjectMenu.preBuild", () => store.ProjectMenu?.preBuild?.());
+  guard("World.buildIntro", () => store.World?.buildIntro?.());
   const textLoaded = store.TextLoader!.loaded || Promise.resolve();
   textLoaded.then(() => {
     const hidden: Promise<void> = store.PageLoader?.hiddenPromise || Promise.resolve();

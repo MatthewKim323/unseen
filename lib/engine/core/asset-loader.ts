@@ -9,6 +9,8 @@ import E from "./event-bus";
 import { store } from "./store";
 import type { TextureOptions } from "./gl";
 
+let sharedKtxLoader: KTX2Loader | null = null;
+
 export class AssetLoader {
   promisesToLoad: Promise<any>[] = [];
   fontsLoaded = false;
@@ -29,8 +31,12 @@ export class AssetLoader {
     this.name = name;
     this.progressEventName = progressEventName;
     this.textureLoader = new TextureLoader();
-    this.ktxLoader = new KTX2Loader();
-    this.ktxLoader.setTranscoderPath(`${store.assetsUrl}basis/`);
+    // One shared KTX2Loader (three warns about multiple active instances; the source made one per loader).
+    if (!sharedKtxLoader) {
+      sharedKtxLoader = new KTX2Loader();
+      sharedKtxLoader.setTranscoderPath(`${store.assetsUrl}basis/`);
+    }
+    this.ktxLoader = sharedKtxLoader;
     this.gltfLoader = new GLTFLoader();
     this.dracoLoader = new DRACOLoader();
     this.dracoLoader.setDecoderPath(`${store.assetsUrl}draco/`);
