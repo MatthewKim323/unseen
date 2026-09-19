@@ -42,3 +42,6 @@ next-env.d.ts
 
 # origin blackout: the source url stays local
 reference/*/.origin.json
+
+# runtime captures: local ground truth, too big for git (regenerable)
+reference/site/runtime/
