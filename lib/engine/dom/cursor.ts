@@ -4,11 +4,13 @@ import gsap from "gsap";
 import { store } from "../core/store";
 import { E } from "../core/event-bus";
 
-// The ring replaces the system cursor: hide the native one whenever the ring is showing,
-// bring it back whenever the ring is hidden (buttons, 3D hovers, cursor disabled).
+// The ring fully replaces the system cursor on pointer devices: the native one is never shown.
 function nativeCursor(show: boolean) {
   document.documentElement.classList.toggle("native-cursor-off", !show);
 }
+
+// Where the source hid the ring (buttons, 3D hovers) it shrinks to a dot instead, so a cursor is always visible.
+const HIDDEN_SCALE = 0.35;
 
 export class Cursor {
   dom!: {
@@ -74,12 +76,10 @@ export class Cursor {
   };
 
   hideEnter = () => {
-    nativeCursor(true);
-    gsap.to(this.dom.wrap, { scale: 0, opacity: 0, ease: "expo.out", duration: 0.8 });
+    gsap.to(this.dom.wrap, { scale: HIDDEN_SCALE, opacity: 1, ease: "expo.out", duration: 0.8 });
   };
 
   hideLeave = () => {
-    if (this.enabled !== false) nativeCursor(false);
     gsap.to(this.dom.wrap, { scale: 1, opacity: 1, ease: "expo.out", duration: 0.8 });
   };
 
@@ -274,7 +274,6 @@ export class Cursor {
   enable() {
     if (store.isTouch) return;
     this.enabled = true;
-    nativeCursor(false);
     gsap.to(this.dom.el, { autoAlpha: 1, duration: 0.5 });
     if (this.currentState === "navItem" || this.currentState === "navWrapper") this.navWrapperEnter();
     this.hideLeave();
