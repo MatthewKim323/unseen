@@ -43,6 +43,28 @@ export const CONTEXTUAL_ROUTES: [from: string, to: string, transition: Transitio
   ["/contact/", "/projects/.+", "homeToProject"],
 ];
 
+/**
+ * Source `getContextualFromRouter`: the first `from` key matching the current path decides; within it
+ * the first matching `to` pattern wins; the lookup stops at that key even when no `to` matched.
+ */
+export function matchContextualRoute(
+  table: Record<string, ContextualRoute[]>,
+  fromPath: string,
+  toPath: string,
+): TransitionName | null {
+  const from = normalizePath(fromPath);
+  const to = normalizePath(toPath);
+  if (from === to) return null;
+  for (const key in table) {
+    if (from.match(new RegExp(`^${key}$`))) {
+      for (let i = 0; i < table[key].length; i++)
+        if (to.match(new RegExp(`^${table[key][i].toPattern}$`))) return table[key][i].transition;
+      return null;
+    }
+  }
+  return null;
+}
+
 /** "/contact" -> "/contact/", "/" stays "/". */
 export function normalizePath(pathname: string): string {
   return pathname.endsWith("/") ? pathname : `${pathname}/`;

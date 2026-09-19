@@ -25,7 +25,7 @@ import ToContactTransition from "./transitions/to-contact";
 import ToProjectMenuTransition from "./transitions/to-project-menu";
 import ToProjectTransition from "./transitions/to-project";
 import ProjectToProjectTransition from "./transitions/project-to-project";
-import { CONTEXTUAL_ROUTES, bodyClassFor, normalizePath, type ContextualRoute, type TransitionName } from "./routes";
+import { CONTEXTUAL_ROUTES, bodyClassFor, matchContextualRoute, type ContextualRoute, type TransitionName } from "./routes";
 
 /** Same selector as the source Router.attach. */
 export const LINK_SELECTOR =
@@ -256,20 +256,8 @@ export class Router {
   }
 
   getContextualFromRouter(fromPath: string, toPath: string) {
-    const from = normalizePath(fromPath);
-    const to = normalizePath(toPath);
-    if (from === to) return;
-    for (const key in this.router) {
-      if (from.match(new RegExp(`^${key}$`))) {
-        for (let i = 0; i < this.router[key].length; i++) {
-          if (to.match(new RegExp(`^${this.router[key][i].toPattern}$`))) {
-            this.Contextual = contextualTransition(this.router[key][i].transition);
-            break;
-          }
-        }
-        break;
-      }
-    }
+    const name = matchContextualRoute(this.router, fromPath, toPath);
+    if (name) this.Contextual = contextualTransition(name);
   }
 
   private onDocumentClick = (e: MouseEvent) => {
