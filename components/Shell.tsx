@@ -438,7 +438,7 @@ function Cursor() {
             <circle className="video-indicator__inner" cx="50" cy="50" r="39" stroke="#EAEAEA" />
             <circle
               className="video-indicator__progress js-cursor-progress-ring"
-              transformOrigin="center center"
+              style={{ transformOrigin: "center center" }}
               transform="rotate(-90)"
               cx="50"
               cy="50"

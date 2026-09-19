@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import worldData from "@/lib/data/world.json";
 
 export const metadata: Metadata = {
-  title: "World – Nocturne Studio®",
+  title: "World | Nocturne Studio®",
 };
 
 // Same as source: the page carries an inline script defining window.worldData (media tiles for the WebGL world).
