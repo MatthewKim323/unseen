@@ -45,3 +45,5 @@ reference/*/.origin.json
 
 # runtime captures: local ground truth, too big for git (regenerable)
 reference/site/runtime/
+reference/site/capture/
+reference/site/screenshots/
