@@ -1,0 +1,677 @@
+body {height: 43px}
+  div
+    div
+      div {opacity: 0; transform: scale(0, 0)}
+        div
+          div "U"
+          div "N"
+          div "S"
+          div "E"
+          div "N"
+          div "E"
+      span "Nocturne Studio®"
+      p "A brand, digital and motion studio creating refreshingly unexpected ideas and striking visuals that help bold brands cut through the noise."
+        br
+        br
+    button {opacity: 1} "Enter without audio"
+      span
+      span
+    div {transform: translate(0px, 0%)}
+      div {transform: translate(0px, 0%)}
+        div
+          div {opacity: 0; transform: scale(0, 0)}
+            div
+              div "U"
+              div "N"
+              div "S"
+              div "E"
+              div "N"
+              div "E"
+          div
+            svg viewBox=0 0 311.3 233.3 {transform: translate(0px, 0px)}
+              defs
+                clippath #mask-left
+                  path
+                clippath #mask-right
+                  path
+              g
+                ellipse
+              g
+                g {transform: translate3d(-13.6317px, -9.07144px, 0px)}
+                  g
+                    ellipse
+                    circle
+                  path {transform-origin: 0px 0px}
+                rect {transform-origin: 0px 0px}
+                rect {transform-origin: 0px 0px}
+              g
+                ellipse
+              g
+                g {transform: translate3d(-13.6317px, -9.07144px, 0px)}
+                  g
+                    ellipse
+                    circle
+                  path {transform-origin: 0px 0px}
+                rect {transform-origin: 0px 0px}
+                rect {transform-origin: 0px 0px}
+          span "Nocturne Studio®"
+          p "A brand, digital and motion studio creating refreshingly unexpected ideas and striking visuals that help bold brands cut through the noise."
+            br
+            br
+          button {opacity: 1}
+            span
+              span
+                span
+                  span "Enter"
+                  svg viewBox=
+                    use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#arrow
+              span
+                span
+                  span "Enter"
+                  svg viewBox=
+                    use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#arrow
+            svg viewBox=
+              rect
+              rect
+              defs
+                mask #SvgjsMask1000
+                  rect
+                  rect {transform-origin: 0px 0px}
+                mask #SvgjsMask1001
+                  rect
+                  rect {transform-origin: 0px 0px}
+  div
+    div
+      div
+        div
+          div "U"
+          div "N"
+          div "S"
+          div "E"
+          div "N"
+          div "E"
+    div
+      div
+        div {position:relative} "("
+        div {position:relative} "L"
+        div {position:relative} "o"
+        div {position:relative} "a"
+        div {position:relative} "d"
+        div {position:relative} "i"
+        div {position:relative} "n"
+        div {position:relative} "g"
+        div {position:relative} ")"
+  header
+    div
+      a href=/
+        svg #Layer_1 viewBox=0 0 1263.3 159.6
+          g
+            g
+              path
+            g
+              path
+              path
+              path
+              path
+              path
+              path
+            g
+              path
+              path
+              path
+              path
+              path
+              path
+    div
+      nav
+        div
+          a href=/
+            div
+              div
+                div {position:relative} "I"
+                div {position:relative} "n"
+                div {position:relative} "d"
+                div {position:relative} "e"
+                div {position:relative} "x"
+              div {opacity: 1}
+                div {position: relative; transform: translate(0%, 150%)} "I"
+                div {position: relative; transform: translate(0%, 150%)} "n"
+                div {position: relative; transform: translate(0%, 150%)} "d"
+                div {position: relative; transform: translate(0%, 150%)} "e"
+                div {position: relative; transform: translate(0%, 150%)} "x"
+          a href=/projects/
+            div
+              div
+                div {position:relative} "P"
+                div {position:relative} "r"
+                div {position:relative} "o"
+                div {position:relative} "j"
+                div {position:relative} "e"
+                div {position:relative} "c"
+                div {position:relative} "t"
+                div {position:relative} "s"
+              div {padding-left: 0.1rem; opacity: 1}
+                div {position: relative; transform: translate(0%, 150%)} "P"
+                div {position: relative; transform: translate(0%, 150%)} "r"
+                div {position: relative; transform: translate(0%, 150%)} "o"
+                div {position: relative; transform: translate(0%, 150%)} "j"
+                div {position: relative; transform: translate(0%, 150%)} "e"
+                div {position: relative; transform: translate(0%, 150%)} "c"
+                div {position: relative; transform: translate(0%, 150%)} "t"
+                div {position: relative; transform: translate(0%, 150%)} "s"
+          a href=/contact/
+            div
+              div
+                div {position:relative} "C"
+                div {position:relative} "o"
+                div {position:relative} "n"
+                div {position:relative} "t"
+                div {position:relative} "a"
+                div {position:relative} "c"
+                div {position:relative} "t"
+              div {opacity: 1}
+                div {position: relative; transform: translate(0%, 150%)} "C"
+                div {position: relative; transform: translate(0%, 150%)} "o"
+                div {position: relative; transform: translate(0%, 150%)} "n"
+                div {position: relative; transform: translate(0%, 150%)} "t"
+                div {position: relative; transform: translate(0%, 150%)} "a"
+                div {position: relative; transform: translate(0%, 150%)} "c"
+                div {position: relative; transform: translate(0%, 150%)} "t"
+      button
+        span "Toggle Menu"
+        div
+        svg viewBox=0 0 14 5
+          circle
+          circle
+        div
+          span
+          svg viewBox=
+            use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#close
+  div
+    div
+      div
+        a href=/ {transform: translate(10%, 0px)}
+          span "01"
+          span
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "I"
+            div {position: relative; opacity: 0; transform: translate(0.9px, 0px) scale(0, 1)} "n"
+            div {position: relative; opacity: 0; transform: translate(3.6px, 0px) scale(0, 1)} "d"
+            div {position: relative; opacity: 0; transform: translate(8.1px, 0px) scale(0, 1)} "e"
+            div {position: relative; opacity: 0; transform: translate(14.4px, 0px) scale(0, 1)} "x"
+            span
+          span {transform: translate(-10%, 0px); opacity: 1}
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "I"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "n"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "d"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "e"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "x"
+        a href=/projects/ {transform: translate(20%, 0px)}
+          span "02"
+          span
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "P"
+            div {position: relative; opacity: 0; transform: translate(0.9px, 0px) scale(0, 1)} "r"
+            div {position: relative; opacity: 0; transform: translate(3.6px, 0px) scale(0, 1)} "o"
+            div {position: relative; opacity: 0; transform: translate(8.1px, 0px) scale(0, 1)} "j"
+            div {position: relative; opacity: 0; transform: translate(14.4px, 0px) scale(0, 1)} "e"
+            div {position: relative; opacity: 0; transform: translate(22.5px, 0px) scale(0, 1)} "c"
+            div {position: relative; opacity: 0; transform: translate(32.4px, 0px) scale(0, 1)} "t"
+            div {position: relative; opacity: 0; transform: translate(44.1px, 0px) scale(0, 1)} "s"
+            span
+          span {transform: translate(-10%, 0px); opacity: 1}
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "P"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "r"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "o"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "j"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "e"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "c"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "t"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "s"
+        a href=/contact/ {transform: translate(30%, 0px)}
+          span "03"
+          span
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "C"
+            div {position: relative; opacity: 0; transform: translate(0.9px, 0px) scale(0, 1)} "o"
+            div {position: relative; opacity: 0; transform: translate(3.6px, 0px) scale(0, 1)} "n"
+            div {position: relative; opacity: 0; transform: translate(8.1px, 0px) scale(0, 1)} "t"
+            div {position: relative; opacity: 0; transform: translate(14.4px, 0px) scale(0, 1)} "a"
+            div {position: relative; opacity: 0; transform: translate(22.5px, 0px) scale(0, 1)} "c"
+            div {position: relative; opacity: 0; transform: translate(32.4px, 0px) scale(0, 1)} "t"
+            span
+          span {transform: translate(-10%, 0px); opacity: 1}
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "C"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "o"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "n"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "t"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "a"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "c"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "t"
+        a href=/world/ {transform: translate(40%, 0px)}
+          span "04"
+          span
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "W"
+            div {position: relative; opacity: 0; transform: translate(0.9px, 0px) scale(0, 1)} "o"
+            div {position: relative; opacity: 0; transform: translate(3.6px, 0px) scale(0, 1)} "r"
+            div {position: relative; opacity: 0; transform: translate(8.1px, 0px) scale(0, 1)} "l"
+            div {position: relative; opacity: 0; transform: translate(14.4px, 0px) scale(0, 1)} "d"
+            span
+          span {transform: translate(-10%, 0px); opacity: 1}
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "W"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "o"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "r"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "l"
+            div {position: relative; opacity: 0; transform: scale(0, 1)} "d"
+          span
+            svg viewBox=
+              use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#globe
+      div
+        div
+          a href=mailto:projects@nocturne.co
+            span "projects@nocturne.co"
+              span
+                span "⮡&nbsp;"
+          a href=tel:(+44) 0117 922 6892
+            span "(+44) 0117 922 6892"
+              span
+                span "⮡&nbsp;"
+        div
+          a href=https://twitter.com/uns__nstudio
+            span "Twitter"
+              span
+                span "⮡&nbsp;"
+          a href=https://www.instagram.com/uns__nstudio/
+            span "Instagram"
+              span
+                span "⮡&nbsp;"
+          a href=https://www.linkedin.com/company/un-seen-studio
+            span "LinkedIn"
+              span
+                span "⮡&nbsp;"
+          a href=https://dribbble.com/unseenstudio
+            span "Dribbble"
+              span
+                span "⮡&nbsp;"
+          a href=https://www.behance.net/nocturne-studio
+            span "Behance"
+              span
+                span "⮡&nbsp;"
+  div
+  div {transform: translate3d(10.4px, 10.4px, 0px)}
+    div
+      div
+        span {transform: rotate(-180deg) scale(1, 1)}
+      span
+        span
+        span
+      span
+        svg viewBox=0 0 100 100
+          circle {transform-origin: 0px 0px}
+          g {transform-origin: 0px 0px}
+            path {transform-origin: 0px 0px}
+            g {transform-origin: 0px 0px}
+              path
+              path
+      span
+        svg viewBox=0 0 48 48
+          line
+          line
+          line
+          circle
+        span
+          span "Click & Hold"
+      span
+        svg viewBox=0 0 100 100
+          circle
+        svg viewBox=0 0 46 10
+          path
+          path
+      span
+        svg viewBox=0 0 100 100
+          circle
+          circle
+  div
+    button
+      span "Toggle Sound"
+      div
+      svg #Layer_1 viewBox=0 0 18 16
+        line {transform-origin: 0px 0px}
+        line {transform-origin: 0px 0px}
+        line {transform-origin: 0px 0px}
+        line {transform-origin: 0px 0px}
+        line {transform-origin: 0px 0px}
+      div
+        span
+    div
+      a href=/
+        span
+          span
+            span
+              span "Our 2025 Wrapped"
+          span
+            span
+              span "Our 2025 Wrapped"
+          span
+            span
+              span "Our 2025 Wrapped"
+        svg viewBox=
+          rect
+          rect
+          defs
+            mask #SvgjsMask1010
+              rect
+              rect {transform-origin: 0px 0px}
+            mask #SvgjsMask1011
+              rect
+              rect
+              rect
+              rect
+            mask #SvgjsMask1012
+              rect
+              rect
+              rect
+              rect
+          rect
+    a href=/world/
+      div
+      svg viewBox=
+        use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#globe
+      div
+        span
+        svg viewBox=
+          use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#globe
+        div
+          div
+            span "Nocturne"
+          div
+            span "World"
+    div "©2026"
+  div {position: fixed; top: 0px; left: 0px; width: 100%; height: 100%}
+    main
+      h1 "Home"
+  div
+    canvas #gl {width: 1440px; height: 900px}
+  div {opacity: 0}
+    div {opacity: 0}
+    div
+      h1 "Selected Projects"
+      div
+        div
+        button "Filter"
+          svg viewBox=
+            use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#chevron-down
+        div
+          button "All"
+            div "20"
+          button "Branding"
+            div "5"
+          button "Digital"
+            div "20"
+          button "Motion"
+            div "5"
+          button "Experiment"
+            div "6"
+  div
+    div {position: absolute}
+      a href=/projects/
+        span
+          span
+            span
+              span "View our work"
+              svg viewBox=
+                use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#arrow
+          span
+            span
+              span "View our work"
+              svg viewBox=
+                use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#arrow
+        svg viewBox=
+          rect
+          rect
+          defs
+            mask #SvgjsMask1002
+              rect
+              rect {transform-origin: 0px 0px}
+            mask #SvgjsMask1003
+              rect
+              rect {transform-origin: 0px 0px}
+    div {position: absolute}
+      div
+        div
+          div
+            h2
+              span "Say hello"
+          div
+            p "we look forward to hearing from you"
+              br
+        div
+          div
+            div
+              a href=#
+                span
+                  span {transform: translate(0px, 250%)}
+                    span
+                      span "New Business"
+                      svg viewBox= {transform: translate(200%, 0px)}
+                        use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#arrow
+                  span {transform: translate(0px, -120%); opacity: 0}
+                    span
+                      span "New Business"
+                      svg viewBox= {transform: translate(200%, 0px)}
+                        use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#arrow
+                  span {transform: translate(0px, 0px)}
+                    span
+                      span "New Business"
+                      svg viewBox= {transform: translate(0px, 0px)}
+                        use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#arrow
+                svg viewBox=
+                  rect
+                  rect
+                  defs
+                    mask #SvgjsMask1004
+                      rect
+                      rect {transform-origin: 0px 0px}
+                    mask #SvgjsMask1005
+                      rect
+                      rect {height: 100%; width: 50%}
+                      rect {width: 100%}
+                      rect {height: 100%; width: 51%}
+                    mask #SvgjsMask1006
+                      rect
+                      rect {height: 100%; width: 50%}
+                      rect {width: 100%}
+                      rect {height: 100%; width: 51%}
+                  rect
+            div
+              a href=#
+                span
+                  span
+                    span
+                      span "General"
+                      svg viewBox=
+                        use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#arrow
+                  span
+                    span
+                      span "General"
+                      svg viewBox=
+                        use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#arrow
+                  span
+                    span
+                      span "General"
+                      svg viewBox=
+                        use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#arrow
+                svg viewBox=
+                  rect
+                  rect
+                  defs
+                    mask #SvgjsMask1007
+                      rect
+                      rect {transform-origin: 0px 0px}
+                    mask #SvgjsMask1008
+                      rect
+                      rect
+                      rect
+                      rect
+                    mask #SvgjsMask1009
+                      rect
+                      rect
+                      rect
+                      rect
+                  rect
+          div
+            div {z-index: -1}
+              div
+                a href=mailto:hello@nocturne.co
+                  span
+                    span
+                      span
+                        div {position: relative; overflow: hidden}
+                          div {position: relative; transform: translate(0%, 120%)} "⮡"
+                    div {position: relative; overflow: hidden}
+                      div {position: relative; transform: translate(0%, 120%)} "h"
+                      div {position: relative; transform: translate(0%, 120%)} "e"
+                      div {position: relative; transform: translate(0%, 120%)} "l"
+                      div {position: relative; transform: translate(0%, 120%)} "l"
+                      div {position: relative; transform: translate(0%, 120%)} "o"
+                      div {position: relative; transform: translate(0%, 120%)} "@"
+                      div {position: relative; transform: translate(0%, 120%)} "u"
+                      div {position: relative; transform: translate(0%, 120%)} "n"
+                      div {position: relative; transform: translate(0%, 120%)} "s"
+                      div {position: relative; transform: translate(0%, 120%)} "e"
+                      div {position: relative; transform: translate(0%, 120%)} "e"
+                      div {position: relative; transform: translate(0%, 120%)} "n"
+                      div {position: relative; transform: translate(0%, 120%)} "."
+                      div {position: relative; transform: translate(0%, 120%)} "c"
+                      div {position: relative; transform: translate(0%, 120%)} "o"
+              div
+                div
+                  span
+                    div {position: relative; overflow: hidden}
+                      div {position: relative; transform: translate(0%, 120%)} "B"
+                      div {position: relative; transform: translate(0%, 120%)} "r"
+                      div {position: relative; transform: translate(0%, 120%)} "i"
+                      div {position: relative; transform: translate(0%, 120%)} "s"
+                      div {position: relative; transform: translate(0%, 120%)} "t"
+                      div {position: relative; transform: translate(0%, 120%)} "o"
+                      div {position: relative; transform: translate(0%, 120%)} "l"
+                  p
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "3"
+                    div {position: relative; transform: translate(0%, 120%)} "5"
+                    div {position: relative; transform: translate(0%, 120%)} "a"
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "C"
+                    div {position: relative; transform: translate(0%, 120%)} "o"
+                    div {position: relative; transform: translate(0%, 120%)} "l"
+                    div {position: relative; transform: translate(0%, 120%)} "s"
+                    div {position: relative; transform: translate(0%, 120%)} "t"
+                    div {position: relative; transform: translate(0%, 120%)} "o"
+                    div {position: relative; transform: translate(0%, 120%)} "n"
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "A"
+                    div {position: relative; transform: translate(0%, 120%)} "v"
+                    div {position: relative; transform: translate(0%, 120%)} "e"
+                    div {position: relative; transform: translate(0%, 120%)} "n"
+                    div {position: relative; transform: translate(0%, 120%)} "u"
+                    div {position: relative; transform: translate(0%, 120%)} "e"
+                  br
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "B"
+                    div {position: relative; transform: translate(0%, 120%)} "r"
+                    div {position: relative; transform: translate(0%, 120%)} "i"
+                    div {position: relative; transform: translate(0%, 120%)} "s"
+                    div {position: relative; transform: translate(0%, 120%)} "t"
+                    div {position: relative; transform: translate(0%, 120%)} "o"
+                    div {position: relative; transform: translate(0%, 120%)} "l"
+                    div {position: relative; transform: translate(0%, 120%)} ","
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "B"
+                    div {position: relative; transform: translate(0%, 120%)} "S"
+                    div {position: relative; transform: translate(0%, 120%)} "1"
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "4"
+                    div {position: relative; transform: translate(0%, 120%)} "T"
+                    div {position: relative; transform: translate(0%, 120%)} "T"
+                div
+                  span
+                    div {position: relative; overflow: hidden}
+                      div {position: relative; transform: translate(0%, 120%)} "L"
+                      div {position: relative; transform: translate(0%, 120%)} "o"
+                      div {position: relative; transform: translate(0%, 120%)} "n"
+                      div {position: relative; transform: translate(0%, 120%)} "d"
+                      div {position: relative; transform: translate(0%, 120%)} "o"
+                      div {position: relative; transform: translate(0%, 120%)} "n"
+                  p
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "9"
+                    div {position: relative; transform: translate(0%, 120%)} "0"
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "P"
+                    div {position: relative; transform: translate(0%, 120%)} "a"
+                    div {position: relative; transform: translate(0%, 120%)} "u"
+                    div {position: relative; transform: translate(0%, 120%)} "l"
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "S"
+                    div {position: relative; transform: translate(0%, 120%)} "t"
+                    div {position: relative; transform: translate(0%, 120%)} "r"
+                    div {position: relative; transform: translate(0%, 120%)} "e"
+                    div {position: relative; transform: translate(0%, 120%)} "e"
+                    div {position: relative; transform: translate(0%, 120%)} "t"
+                  br
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "L"
+                    div {position: relative; transform: translate(0%, 120%)} "o"
+                    div {position: relative; transform: translate(0%, 120%)} "n"
+                    div {position: relative; transform: translate(0%, 120%)} "d"
+                    div {position: relative; transform: translate(0%, 120%)} "o"
+                    div {position: relative; transform: translate(0%, 120%)} "n"
+                    div {position: relative; transform: translate(0%, 120%)} ","
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "E"
+                    div {position: relative; transform: translate(0%, 120%)} "C"
+                    div {position: relative; transform: translate(0%, 120%)} "2"
+                    div {position: relative; transform: translate(0%, 120%)} "A"
+                  div {position: relative; overflow: hidden}
+                    div {position: relative; transform: translate(0%, 120%)} "4"
+                    div {position: relative; transform: translate(0%, 120%)} "N"
+                    div {position: relative; transform: translate(0%, 120%)} "E"
+            div {z-index: 10}
+              div
+                div
+                  a href=mailto:projects@nocturne.co
+                    span
+                      span
+                        span
+                          div {position: relative; overflow: hidden}
+                            div {position: relative; transform: translate(0px, 0px)} "⮡"
+                      div {position: relative; overflow: hidden}
+                        div {position: relative; transform: translate(0px, 0px)} "p"
+                        div {position: relative; transform: translate(0px, 0px)} "r"
+                        div {position: relative; transform: translate(0px, 0px)} "o"
+                        div {position: relative; transform: translate(0px, 0px)} "j"
+                        div {position: relative; transform: translate(0px, 0px)} "e"
+                        div {position: relative; transform: translate(0px, 0px)} "c"
+                        div {position: relative; transform: translate(0px, 0px)} "t"
+                        div {position: relative; transform: translate(0px, 0px)} "s"
+                        div {position: relative; transform: translate(0px, 0px)} "@"
+                        div {position: relative; transform: translate(0px, 0px)} "u"
+                        div {position: relative; transform: translate(0px, 0px)} "n"
+                        div {position: relative; transform: translate(0px, 0px)} "s"
+                        div {position: relative; transform: translate(0px, 0px)} "e"
+                        div {position: relative; transform: translate(0px, 0px)} "e"
+                        div {position: relative; transform: translate(0px, 0px)} "n"
+                        div {position: relative; transform: translate(0px, 0px)} "."
+                        div {position: relative; transform: translate(0px, 0px)} "c"
+                        div {position: relative; transform: translate(0px, 0px)} "o"
+  div #p-cover
+  div
+    div {height: 0px}
+      div
+  div
+  div {overflow: hidden; width: 1440px; height: 900px; position: absolute; top: 0px; z-index: 60; opacity: 1}
+    div {transform-style: preserve-3d; width: 1440px; height: 900px}
+  div
+    div
+      div
+        svg viewBox=
+          use href=/wp-content/themes/nocturne/public/images/svgsprite.svg#drag-globe
+      div
+        p "Drag to explore our world"

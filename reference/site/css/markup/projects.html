@@ -1,0 +1,24 @@
+<!-- route: /projects | body class="archive post-type-archive post-type-archive-project wp-embed-responsive wp-theme-nocturne" -->
+<div asscroll-container data-router-wrapper>
+  <main asscroll data-router-view="projects" role="main" itemscope itemprop="mainContentOfPage">
+    <h1 class="absolute z-negative" style="opacity: 0.001">Projects</h1>
+    <div class="project-grid-cta | js-project-grid-cta">
+      <p>Looking for a creative partner for your project?</p>
+      <a href="mailto:projects@nocturne.studio" target="_blank" title="projects@nocturne.studio" class="btn btn--regular btn--fill btn--dark js-btn" data-btn="fill" data-cursor="hide">
+        <span class="btn__inner js-btn-inner">
+          <span class="btn__content js-btn-content">
+            <span class="d-flex flex-row items-end">
+              <span class="btn__text">
+                projects@nocturne.studio
+              </span>
+              <svg class="btn__icon d-inline-block js-btn-icon">
+                <use xlink:href="/assets/images/img-687f48138f.svg#arrow"></use>
+              </svg>
+            </span>
+          </span>
+        </span>
+      </a>
+    </div>
+  </main>
+</div>
+<!-- NOTE: the project grid itself is WebGL (canvas#gl). Project data comes from a global `projects` JSON array inlined in a <script> at the end of <body> on every page (stripped). -->

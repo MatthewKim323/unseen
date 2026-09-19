@@ -1,43 +1,56 @@
-# Conventions for section builders
+# Nocturne: builder contract
 
-Goal: pixel-and-motion 1:1 rebuild of the captured reference in Next.js (App Router) + React 19 + `motion` (import from "motion/react") + Lenis, shipped as Nocturne's own components. Tailwind may be installed; exact values go in inline style objects and scoped `<style>` blocks.
+Read fully before writing code. This is a 1:1 port of a custom WebGL site (vanilla JS SPA + three.js r143 + GSAP) into Next.js 16 App Router + React 19 + TypeScript. The engine is imperative; React only renders markup and boots the engine once.
 
-Project: `/Volumes/Vault/vaultdev/design/unseen`. Dev server already running at http://localhost:3777 (do NOT start another). Reference: `/Volumes/Vault/vaultdev/design/unseen/reference/site/`. Rigs: `1to1 <cmd>` (see `1to1 help`).
+## Rule zero: origin blackout
+The rebuild is Nocturne's own site. Never write the source site's name, hostname, url, or its original upload file names anywhere outside `reference/` (code, comments, file names, class names, alt text, metadata, your reply). Brand copy says "Nocturne" / "NOCTURNE STUDIO®". The logo wordmark is a placeholder. Run `~/.claude/skills/1to1/bin/1to1 blackout /Volumes/Vault/vaultdev/design/unseen` before reporting done; it must be CLEAN for your files. No em dashes anywhere.
 
-## Origin blackout (rule zero)
-Nothing you write may say where this came from. No origin name, host, brand, logo filename, link or "cloned from / based on / like <site>" anywhere: not in a component, file name, class name, CSS comment, code comment, alt text, page metadata, doc or commit message. These are Nocturne's components and Nocturne's assets.
-- The reference is already scrubbed for you: the origin's words read as `Nocturne` in `spec/`, `dom/`, `modules/` and the motion docs, and its links are route-relative. Copy text verbatim from `spec/` and you stay clean. Never copy from a live browser tab, and never go looking for the source url (it lives in `reference/site/.origin.json` for the rigs only).
-- Assets are content addressed (`img-<hash>.webp`, `font-<hash>.woff2`). Keep those names. A logo / wordmark asset still carries the origin visually: use it as a placeholder, name it neutrally (`logo.svg`, `mark.svg`) and say so in your reply.
-- `1to1 blackout /Volumes/Vault/vaultdev/design/unseen` must print CLEAN. `1to1 verify` runs it and FAILs on a hit.
+## Ground truth (read, never guess)
+- `reference/site/source/pretty/theme.js`: the original engine, beautified. Line ranges per class in `reference/site/engine/ARCH.md` §1. **Port from this code.** Keep every constant, ease, duration, delay, uniform, lerp factor exactly. Do not "improve", simplify, or substitute R3F/drei.
+- `reference/site/engine/`: ARCH.md, scenes/*.md, shaders/*.glsl + shaders/INDEX.md, dom-motion.md, assets.md, deps.md.
+- `reference/site/css/`: TOKENS.md, COMPONENTS.md, markup/*.html (shell + each route body, already brand-scrubbed), sprite/*.svg.
+- `reference/site/runtime/`: live captures after entering the site: shots/<route>/<vp>/NN.png, frames/, dom/<route>-<vp>.html, boxes/, net/ (every asset + data payload), README.md.
+- Global CSS is `app/globals.css` = the site's own stylesheet verbatim + loader critical CSS + fonts. Do not restyle; render the original class names. If a rule is missing, add it to a scoped file `app/styles/<area>.css` imported from `app/layout.tsx` (tell the orchestrator), never edit globals.css.
 
-## Ground truth (read these, never guess)
-- `spec/sections/NN-<section>.txt` (or `spec/page.txt`): the section's DOM tree (`data-framer-name` labels, appear ids, classes, layout inline styles, text) followed by every CSS rule for its classes per breakpoint. `@base` = desktop (>= 1200). `(min-width:810px) and (max-width:1199.98px)` = tablet. `(max-width:809.98px)` = phone. Cascade: apply @base, then override per breakpoint.
-- `capture/desktop/sections/NN-*.png` (2x) and `capture/{tablet,tablet-810,mobile}/sections/`: what it must look like, revealed. Elements may be mid-animation; rest state is the target.
-- `capture/<vp>/layout.json`: every element's page rect and computed styles. `1to1 refboxes reference/site <vp> <y0> <y1>` prints the rows for a y-range; compare with `1to1 boxes http://localhost:3777/?only=<section> <width> <y0> <y1>` on your build.
-- `motion/component-specs.md` + `motion/transitions.json` (when present): exact transitions per element. Use verbatim. `motion/framer-appear.json`: on-mount appears by appear id.
-- `dom/full.html`, `dom/styles.css`: raw material. `1to1 cssq reference/site <class>` prints rules for a class.
-- `assets/svg/<id>.svg`: sprite defs, available at runtime through the `Sprite` component: `<use href="#id">`. Helpers `Icon` / `SpriteGraphic` set the `--sw` (stroke width) and `--ic` (color) vars. Inline Phosphor icons (viewBox 0 0 256 256, raw `<path>`): copy the path data from `dom/full.html`.
-- Images: copy from `assets/images/` to `public/img/<sameName>` (already content addressed, e.g. `img-9f2c1a77b3.webp`) and reference `/img/<sameName>`. Do not rename them after the origin's own filenames.
+## Stack (pinned)
+three `0.143.0` (same as source: shader chunks, color management and GLTF behaviour match), gsap 3 (use `gsap`, `gsap/ScrollTrigger`, `gsap/CustomEase`, `gsap/SplitText`; all free), `troika-three-text` (pick a version compatible with three 0.143), `howler`, `@ashthornton/asscroll`, `@svgdotjs/svg.js`. Loaders/passes from `three/examples/jsm/...` of 0.143 (GLTFLoader, DRACOLoader, KTX2Loader, EffectComposer, RenderPass, ShaderPass, SavePass, CopyShader, CSS3DRenderer...). Install with `bun add <pkg>` from the project root; tell the orchestrator what you added. Do not remove packages.
 
-## Design tokens (app/globals.css)
-<!-- fill in after scaffolding: every --token-<uuid> mapped to a named var, e.g. --c-ink #121218, --c-body #44454c, --c-line #c9cdd2, --c-surface #f7f7f8 -->
-Fonts: <!-- e.g. var(--font-sans) = Instrument Sans, var(--font-serif) = Lora -->. Map any `--token-<uuid>` in the CSS to the hex fallback written in the same rule.
+## Layout
+```
+lib/engine/
+  core/        store.ts (the `store` singleton, same field names as source `o`), event-bus.ts, global-events.ts, raf.ts (RAFCollection),
+               asset-loader.ts, asset-url.ts, gl.ts (renderer/camera/composer/screen FX/global fluid), ordered-passes.ts, fbo.ts,
+               fluid-sim.ts, css3d.ts, three-plugin.ts, gl-props.ts, brownian.ts, fps-checker.ts, task-scheduler.ts, audio.ts,
+               component-manager.ts, observer.ts, full-screen-quad.ts, dispose.ts
+  shaders/     *.glsl.ts (export const x = /* glsl */`...`), copied verbatim from reference/site/engine/shaders
+  dom2webgl/   manager + items (WebGLItem, WebGLText, TextReveal, WebGLImage, ProjectModel, PhoneModel, Slider, ProjectTransition*, Awards), effects registry, scroll-animations
+  scenes/home-contact/  scenes/project-menu/  scenes/world/  scenes/project/
+  dom/         page-loader, naked-loader, navigation, menu, world-button, mute-button, cursor, svg-button, video-player, content-toggle, project-filters, grid-slider, favicon
+  router/      router.ts (Next integration), renderers/*.ts, transitions/*.ts, routes.ts (contextual table)
+  boot.ts      App bootstrap (source `Wo.init` + BaseRenderer.onFirstLoad)
+components/    Shell.tsx (loader, header, menu, footer, cursor, #gl wrapper, asscrollbar), EngineRoot.tsx ('use client', boots once), Sprite.tsx
+app/           layout.tsx, page.tsx (home), contact/, projects/, projects/[slug]/, world/, not-found.tsx
+lib/data/      projects.json, world.json, project detail content (media paths already rewritten to /media/...)
+public/theme/  theme assets, same relative paths as source `assetsUrl` (models/, images/, audio/, draco/, basis/, fonts/)
+public/media/  uploaded media, content-addressed; map original->local in reference/site/media-map.json (reference only)
+```
+Asset urls: `assetUrl(path) => \`/theme/${path}\`` (drop the source's `?v=` cache buster). Media: look up `reference/site/media-map.json` when writing data files; never put original upload paths in the app.
 
-## Shared primitives (components/ui)
-<!-- list what exists: Button variants, IconButton, Pill, SectionHeader, Stat, Icon / SpriteGraphic, Avatar, AccordionItem, ScrollReveal (lib/scroll-reveal.tsx: ScrollReveal, useScrollFx, FX500/300/250), lib/motion.ts (appearSpring, revealSpring, hoverTween) -->
-Reuse these; extend backward-compatibly rather than duplicating. New reusable pieces go in components/ui. Re-read a shared file before editing it; another builder may have changed it.
+## Engine conventions
+- Class per source class, named descriptively (ARCH.md §1 names: `Gl`, `HomeContact`, `ProjectMenu`, `World`, `Butterflies`, `Reflector`, `PageLoader`, `Cursor`...). **Keep the source's method and field names** (`onRaf`, `build`, `preBuild`, `tweenParams`, `cameraPathProgress`, `composerPasses.add(pass, idx)`, `RAFCollection.add(cb, idx)`, `AssetLoader.loadGltf/loadTexture/loadKtxTexture/loadJson`, `savePass`, `transitionPass`...) so cross-module references in transitions work unchanged. Register instances on `store` under the same keys as source (`store.Gl`, `store.HomeContact`, `store.ProjectMenu`, `store.World`, `store.Audio`, `store.Cursor`, `store.Menu`, `store.ASScroll`, `store.AssetLoader`, `store.TextLoader`, `store.RAFCollection`...).
+- TypeScript: `strict` is on. Where porting typing gets in the way, prefer explicit local types or `any` on the boundary over changing behaviour. `bunx tsc --noEmit` must be clean for your files.
+- Everything runs client-side only (`'use client'` in React entry points; engine modules must not touch `window` at import time).
+- No three.js lights, fog done in shaders, exactly as source.
+- DOM selectors: the markup uses the source class names and `js-*` hooks (see css/markup). Query the same selectors the source queries.
+- RAF order and pass indices exactly as ARCH.md §2 and §6.
 
-## Component rules
-1. One file per section: `components/sections/<name>.tsx`, `"use client"` when it uses motion or hooks, named export `export function <Name>()`.
-2. Section root follows the Framer structure: `<section style={{display:'flex', justifyContent:'center', width:'100%'}}><div style={{flex:'1 0 0', width:'100%', maxWidth:1200, padding:'96px 24px', display:'flex', flexDirection:'column', alignItems:'center', gap:64}}>`. Copy exact paddings / gaps / radii / sizes from the spec. Never eyeball a number.
-3. Typography: copy `--framer-font-size / line-height / weight / letter-spacing / color` from the matching preset rule. `white-space: pre` becomes `whiteSpace: 'pre'`. Presets change per breakpoint; check tablet and phone rules.
-4. Responsive: desktop-first inline styles, overrides in a `<style>` block scoped by a unique class prefix (yours: `{{PREFIX}}-`; grep before choosing another) at `@media (max-width:1199.98px)` and `@media (max-width:809.98px)`. Nodes with `hidden-<hash>` classes are hidden at that breakpoint.
-5. Motion: `motion` components (`import { motion } from "motion/react"`). Before the spec exists: use `revealSpring` and leave `// TODO(spec)` on every guessed value. After: exact values from component-specs.md. Framer "Enter" effects (scroll transform) are scroll-progress-linked springs through `ScrollReveal` / `useScrollFx`, never `whileInView`.
-6. Framer `data-border` borders are overlays: `boxShadow: 'inset 0 0 0 1px <color>'` or an absolutely positioned inset span with `border`, `borderRadius: 'inherit'`, `pointerEvents: 'none'`. Never a real CSS border (adds 2px to the box).
-7. Framer's `flex: 1 0 0; width: 1px` fill idiom only works in a flex row; in column contexts use `width: '100%'`.
-8. Masks: `-webkit-mask` becomes `WebkitMaskImage` + `maskImage`.
-9. Text content verbatim from the tree, including typographic apostrophes. The tree is already scrubbed, so where it says `Nocturne` that is the copy: keep it. No em dashes anywhere (code, comments, copy you write).
-10. After writing, screenshot: `1to1 shot "http://localhost:3777/?only=<name>" reference/site/build/<name>-1440.png --w 1440`. Compare with the reference crop using the Read tool; fix spacing, sizes, fonts, colors, positions; repeat. Then `--w 1024`, `--w 810`, `--w 390` against the tablet / phone crops. Section height must equal the reference at every width (`1to1 heights`).
-11. Do not touch other sections' files, `app/layout.tsx` or `globals.css`. Register your section in `app/page.tsx` only in the marked slot.
-12. `bunx tsc --noEmit -p /Volumes/Vault/vaultdev/design/unseen` must pass for your file. Check the dev log for runtime errors from your component.
-13. Before you report done: `1to1 blackout /Volumes/Vault/vaultdev/design/unseen` prints CLEAN. If it names your file, rename the identifier or drop the comment; `--fix` rewrites text hits to `Nocturne`.
+## React side
+- `app/layout.tsx` renders `<Shell/>` + `<EngineRoot/>` around `{children}`. Each route renders its body markup (from `reference/site/css/markup/<route>.html`, converted to JSX, same classes/attributes/`data-*`) inside `<main data-router-view="...">` which lives in `<div asscroll-container data-router-wrapper>`.
+- `reactStrictMode: false` (engine boots once). Links are plain `<a href>`; the engine router intercepts clicks.
+- Port 3777, one dev server run by the orchestrator (`bun run dev`). Never start another. Check with `curl -s localhost:3777 >/dev/null`.
+
+## Ownership
+Each builder owns exactly the files listed in its prompt. Do not edit other builders' files; if you need something from another area, import it by its planned path/name above and note the dependency in your reply. If a planned module does not exist yet, write against its source API (the minified class in theme.js) and leave it; the orchestrator integrates.
+
+## Verification (what "done" means for a builder)
+Compare against `reference/site/runtime/shots/` and `frames/` at 1440, 1024, 810, 390 using `~/.claude/skills/1to1/bin/1to1 shot "http://localhost:3777/<route>" out.png --w <w>` (and the Read tool on both images). Values are quoted from source, never eyeballed. Reply with: files written, packages added, what matches, honest remaining gaps, dependencies on other areas.

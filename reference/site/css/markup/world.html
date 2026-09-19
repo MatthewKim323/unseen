@@ -1,0 +1,35 @@
+<!-- route: /world | body class="wp-singular page page-id-10 wp-embed-responsive wp-theme-nocturne dark page-template-world" -->
+<div asscroll-container data-router-wrapper>
+  <main asscroll data-router-view="world" role="main" itemscope itemprop="mainContentOfPage">
+    <h1 class="pointer-events-none user-select-none">Nocturne World</h1>
+    <div class="world-details | js-details">
+      <div class="world-details__title-wrap | js-details-title-wrap">
+        <h2 class="world-details__title | js-details-title"></h2>
+      </div>
+      <div class="js-details-meta">
+        <div class="world-details__author | js-details-author-wrap">
+          <div class="mb-1">
+            <span>By&nbsp;</span>
+            <span class="js-details-author"></span>
+          </div>
+        </div>
+        <div class="world-details__caption t-sans t-uppercase mb-1 | js-details-caption"></div>
+        <a href="#" title="View more" class="btn btn--regular btn--fill btn--light world-details__btn js-details-btn js-btn" data-btn="fill" data-cursor="hide">
+          <span class="btn__inner js-btn-inner">
+            <span class="btn__content js-btn-content">
+              <span class="d-flex flex-row items-end">
+                <span class="btn__text">
+                  View more
+                </span>
+                <svg class="btn__icon d-inline-block js-btn-icon">
+                  <use xlink:href="/assets/images/img-687f48138f.svg#arrow"></use>
+                </svg>
+              </span>
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+<!-- NOTE: the source inlines a `worldData` JSON array in a <script> inside <main> (image/video tiles for the WebGL world: type, title, author, link, color, file .ktx2, show_caption, caption, image_size). Stripped here; pull it from source/raw/page-world.html when porting the world scene. -->
