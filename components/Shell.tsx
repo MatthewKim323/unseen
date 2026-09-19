@@ -1,3 +1,4 @@
+import { PersistentContent } from "./PersistentContent";
 // Persistent shell markup (reference/site/css/markup/shell.html, same classes and hooks).
 // Order in <body>: <Shell/> (loader, naked-loader, header, menu, click-catcher, cursor, footer),
 // then the router wrapper with the route <main>, then <ShellPost/> (gl canvas, world intro,
@@ -605,6 +606,7 @@ export function ShellPost() {
           </div>
         </div>
       </div>
+      <PersistentContent />
       <div id="p-cover"></div>
       <div className="asscrollbar">
         <div className="asscrollbar__handle">

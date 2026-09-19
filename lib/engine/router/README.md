@@ -47,8 +47,12 @@ also run (they check `store.Router` inside `onBoot`, which fires before the Rout
   the DOM -> `router.push(url, { scroll: false })` (Next's app router, `window.next.router` or one
   handed in with `setNextRouter(useRouter())`) -> wait for the new `main[data-router-view]` ->
   `NAVIGATE_IN` (body class) -> `To.show()` (onEnter, `in`, onEnterCompleted) -> `NAVIGATE_END`.
-- Back/forward: a capture-phase `popstate` listener holds the event back from Next, runs the out
-  transition, then replays the same `PopStateEvent` so Next restores the tree. A back/forward
+- Back/forward: Next registers its popstate listener before the engine boots and React flushes
+  popstate renders synchronously, so listener order cannot hold it back. The router patches
+  `PopStateEvent.prototype.state` so trusted events read `null` (Next's handler returns early), runs
+  the out transition with the old view still mounted, then dispatches a synthetic `PopStateEvent`
+  carrying the real state so Next restores the tree (verified headless: DOM holds after `back()`,
+  swaps on replay). A back/forward
   pressed during a transition is applied after it ends (the source re-pushed the in-flight url,
   which would corrupt Next's history state).
 - Old view removal: transitions call `removeView(el)` where the source did

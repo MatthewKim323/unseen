@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // App bootstrap: source `Wo.init` (theme.js 17228-17271) + `BaseRenderer.onFirstLoad` (14999-15052).
 // Client only. EngineRoot dynamic-imports this module and calls bootEngine() once.
+import { Favicon } from "./dom/favicon";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
@@ -37,6 +38,7 @@ function appInit() {
   Object.assign(store, { assetsUrl: "/theme/", publicUrl: "/" }, window.globalData || {});
   store.GlobalEvents = new GlobalEvents();
   window.store = store;
+  Favicon.handleFavicon();
 }
 
 /** source BaseRenderer.onFirstLoad: constructs every manager in source order. */

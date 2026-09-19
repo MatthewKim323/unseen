@@ -671,8 +671,10 @@ export class HomeContact {
       viewProjectsBtn: f('.js-view-projects-btn'),
     });
     o.contentToggle = new ContentToggle();
-    this.viewProjectsBtn = new SvgButton(f('.js-btn', this.dom.viewProjectsBtn));
     this.contactBtns = [];
+    // Guard (not in source): the shell markup may be absent; the source assumes both templates exist.
+    if (!this.dom.viewProjectsBtn || !this.dom.contactContent) return;
+    this.viewProjectsBtn = new SvgButton(f('.js-btn', this.dom.viewProjectsBtn));
     p('.js-btn', this.dom.contactContent).forEach((e) => {
       this.contactBtns.push(new SvgButton(e));
     });
@@ -743,7 +745,7 @@ export class HomeContact {
       .to(this.homeTextMesh.material.uniforms.uOpacity, { value: 0, duration: 1, ease: 'expo.out' }, e ? 0 : 1)
       .to(this.dom.viewProjectsBtn, { autoAlpha: 0, ease: 'expo.out' }, e ? 0 : 1.2)
       .fromTo(
-        this.dom.contactContent.querySelectorAll('.js-reveal-anim'),
+        this.revealAnims(),
         { autoAlpha: 0 },
         {
           autoAlpha: 1,
@@ -763,7 +765,7 @@ export class HomeContact {
     return gsap
       .timeline()
       .to(
-        this.dom.contactContent.querySelectorAll('.js-reveal-anim'),
+        this.revealAnims(),
         { autoAlpha: 0, stagger: 0.05, duration: 1, ease: 'expo.out' },
         e ? 0 : 0.5,
       )
@@ -783,18 +785,23 @@ export class HomeContact {
   }
 
   showUI() {
-    this.dom.viewProjectsBtn.style.visibility = 'visible';
-    this.dom.contactContent.style.visibility = 'visible';
+    if (this.dom.viewProjectsBtn) this.dom.viewProjectsBtn.style.visibility = 'visible';
+    if (this.dom.contactContent) this.dom.contactContent.style.visibility = 'visible';
   }
 
   hideUI() {
-    this.dom.viewProjectsBtn.style.visibility = 'hidden';
-    this.dom.contactContent.style.visibility = 'hidden';
+    if (this.dom.viewProjectsBtn) this.dom.viewProjectsBtn.style.visibility = 'hidden';
+    if (this.dom.contactContent) this.dom.contactContent.style.visibility = 'hidden';
+  }
+
+  revealAnims(): HTMLElement[] {
+    return this.dom.contactContent ? p('.js-reveal-anim', this.dom.contactContent) : [];
   }
 
   addEvents() {
     o.RAFCollection.add(this.onRaf, 100);
     n.on('cssrenderer:cacheUpdated', this.updateHtmlScale);
+    if (!this.viewProjectsBtn3D) return;
     n.on('click', this.viewProjectsBtn3D.element, this.onProjectsBtnClick);
     n.on('mouseenter', this.viewProjectsBtn3D.element, this.onProjectsBtnEnter);
     n.on('mouseleave', this.viewProjectsBtn3D.element, this.onProjectsBtnLeave);
@@ -855,8 +862,10 @@ export class HomeContact {
   destroy() {
     o.RAFCollection.remove(this.onRaf);
     n.off('cssrenderer:cacheUpdated', this.updateHtmlScale);
-    n.off('mouseenter', this.viewProjectsBtn3D.element, this.onProjectsBtnEnter);
-    n.off('mouseleave', this.viewProjectsBtn3D.element, this.onProjectsBtnLeave);
+    if (this.viewProjectsBtn3D) {
+      n.off('mouseenter', this.viewProjectsBtn3D.element, this.onProjectsBtnEnter);
+      n.off('mouseleave', this.viewProjectsBtn3D.element, this.onProjectsBtnLeave);
+    }
     this.renderCss = false;
     this.renderPass.enabled = false;
     this.savePass.enabled = false;

@@ -148,6 +148,26 @@ export class Helpers {
   }
 }
 
+// ---- popstate hold -------------------------------------------------------------------------------
+let nativeStateGetter: ((this: PopStateEvent) => any) | null = null;
+function holdNativePopState() {
+  if (nativeStateGetter) return;
+  const desc = Object.getOwnPropertyDescriptor(PopStateEvent.prototype, "state");
+  if (!desc || !desc.get) return;
+  nativeStateGetter = desc.get as (this: PopStateEvent) => any;
+  const getter = nativeStateGetter;
+  Object.defineProperty(PopStateEvent.prototype, "state", {
+    configurable: true,
+    enumerable: desc.enumerable,
+    get(this: PopStateEvent) {
+      return this.isTrusted ? null : getter.call(this);
+    },
+  });
+}
+function realPopState(e: PopStateEvent) {
+  return nativeStateGetter ? nativeStateGetter.call(e) : e.state;
+}
+
 function wrapper(): HTMLElement {
   return document.querySelector("[data-router-wrapper]") as HTMLElement;
 }
@@ -204,8 +224,11 @@ export class Router {
       this.From.setup();
     });
 
-    // Capture phase on window runs before Next's own (bubble) popstate listener, so the out
-    // transition can play before Next swaps the tree.
+    // Next's popstate listener is registered first (AppRouter effect) and React flushes popstate
+    // renders synchronously, so listener order cannot hold it back. Instead, trusted popstate events
+    // report `state: null` to page code (Next's handler then returns early) and the router replays the
+    // real state to Next with a synthetic event once the out transition is done.
+    holdNativePopState();
     window.addEventListener("popstate", this.onPopStateCapture, true);
     document.addEventListener("click", this.onDocumentClick);
 
@@ -295,7 +318,7 @@ export class Router {
   private onPopStateCapture = (e: PopStateEvent) => {
     if (this.replayingPop) return; // our own replay: let Next's handler run
     e.stopImmediatePropagation();
-    this.popState(e.state);
+    this.popState(realPopState(e));
   };
 
   popState(state: any): boolean | void {
