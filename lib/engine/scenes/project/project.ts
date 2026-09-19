@@ -155,7 +155,8 @@ export class Project {
       o.Gl.fluidSim.enable();
     }
     if (o.Gl.fxaaPass) o.Gl.fxaaPass.enabled = false; // core Gl omits the dead FXAA pass
-    if (o.projectToProjectTransition) {
+    // prevRenderPass is only captured when setup() ran mid project-to-project; a stale flag must not throw here.
+    if (o.projectToProjectTransition && this.prevRenderPass) {
       this.prevRenderPass.enabled = false;
       o.Gl.composerPasses.remove(this.prevRenderPass);
     }

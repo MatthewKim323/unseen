@@ -85,12 +85,12 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
       {...a({ asscroll: "" })}
       data-router-view="project"
       data-body-class={p.bodyClass}
+      data-current-project-menu-id={p.currentProjectMenuId}
       role="main"
       itemScope
       itemProp="mainContentOfPage"
       style={{ visibility: "hidden", opacity: 0 }}
     >
-      <script dangerouslySetInnerHTML={{ __html: `document.body.className=${JSON.stringify(p.bodyClass)};` }} />
       <div className="absolute center-x top mt-6 mt-3@sm">
         <p className="t-uppercase t-500 t-lh-1.1 t-center" dangerouslySetInnerHTML={{ __html: p.clientLine }} />
       </div>
@@ -281,7 +281,6 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
           {...a({ dom2webgl: "c:ProjectTransition", "data-next-bgcolor": ft.planeNextBgColor })}
         />
       </div>
-      <script dangerouslySetInnerHTML={{ __html: `window.currentProjectMenuId = ${p.currentProjectMenuId}` }} />
     </main>
   );
 }

@@ -23,6 +23,9 @@ export class ProjectRenderer extends BaseRenderer {
     super.onEnter();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     this.gridSliders = new ComponentManager(GridSlider as any);
+    // Source: an inline <script> set window.currentProjectMenuId; here the view carries it as a data attribute.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).currentProjectMenuId = parseInt(this.page.dataset.currentProjectMenuId || "0", 10);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     store.currentProjectMenuId = (window as any).currentProjectMenuId;
     store.projectLightMode = document.body.classList.contains("dark");

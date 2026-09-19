@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import worldData from "@/lib/data/world.json";
 
 export const metadata: Metadata = {
   title: "World | Nocturne Studio®",
 };
 
-// Same as source: the page carries an inline script defining window.worldData (media tiles for the WebGL world).
-const WORLD_DATA_SCRIPT = `window.worldData = ${JSON.stringify(worldData).replace(/</g, "\\u003c")};`;
+// window.worldData (source inline script) is filled by the World scene from lib/data/world.json.
 
 export default function WorldPage() {
   return (
@@ -50,7 +48,6 @@ export default function WorldPage() {
           </a>
         </div>
       </div>
-      <script dangerouslySetInnerHTML={{ __html: WORLD_DATA_SCRIPT }} />
     </main>
   );
 }
