@@ -1,5 +1,5 @@
-export const homeDustParticlesBillboardVert = /* glsl */ `
-#define GLSLIFY 1
+// ported verbatim from the source engine
+export const homeDustParticlesBillboardVert = /* glsl */ `#define GLSLIFY 1
 varying vec3 vWorldPosition;
 varying vec3 vPos;
 varying vec2 vUv;
@@ -54,5 +54,4 @@ void main () {
 	mvPosition = modelViewMatrix * mvPosition;
 	vPos = mvPosition.xyz;
     gl_Position = projectionMatrix * mvPosition;
-}
-`;
+}`;

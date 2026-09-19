@@ -1,5 +1,5 @@
-export const homeWaterReflectorFrag = /* glsl */ `
-#define GLSLIFY 1
+// ported verbatim from the source engine
+export const homeWaterReflectorFrag = /* glsl */ `#define GLSLIFY 1
 varying vec4 vMirrorCoord;
 varying vec2 vUv;
 varying vec3 vWorldPosition;
@@ -135,5 +135,4 @@ void main() {
 
     gl_FragColor = vec4(color, 1.);
     // gl_FragColor = vec4(vec3(ao), 1.);
-}
-`;
+}`;

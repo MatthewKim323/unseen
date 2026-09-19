@@ -1,5 +1,5 @@
-export const homeGrassBladeVert = /* glsl */ `
-precision highp float;
+// ported verbatim from the source engine
+export const homeGrassBladeVert = /* glsl */ `precision highp float;
 #define GLSLIFY 1
 
 attribute vec3 position;
@@ -94,5 +94,4 @@ void main() {
 	vViewPosition = -mvPosition.xyz;
 	vWorldPosition = (modelMatrix * instanceMatrix * vec4(position, 1.));
 	gl_Position = projectionMatrix * mvPosition;
-}
-`;
+}`;

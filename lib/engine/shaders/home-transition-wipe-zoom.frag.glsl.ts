@@ -1,5 +1,5 @@
-export const homeTransitionWipeZoomFrag = /* glsl */ `
-#define GLSLIFY 1
+// ported verbatim from the source engine
+export const homeTransitionWipeZoomFrag = /* glsl */ `#define GLSLIFY 1
 varying vec2 vUv;
 
 uniform sampler2D u_fromScene;
@@ -23,5 +23,4 @@ void main() {
 	vec4 fromColor = texture2D(u_fromScene, (vUv - 0.5) * (1.0 - intpl) + 0.5);
 	vec4 toColor = texture2D(u_toScene, (vUv - 0.5) * intpl + 0.5);
 	gl_FragColor = mix(fromColor, toColor, intpl);
-}
-`;
+}`;

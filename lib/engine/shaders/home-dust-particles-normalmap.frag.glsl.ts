@@ -1,5 +1,5 @@
-export const homeDustParticlesNormalmapFrag = /* glsl */ `
-#define GLSLIFY 1
+// ported verbatim from the source engine
+export const homeDustParticlesNormalmapFrag = /* glsl */ `#define GLSLIFY 1
 varying vec3 vWorldPosition;
 varying vec3 vPos;
 varying vec2 vUv;
@@ -32,5 +32,4 @@ void main() {
     gl_FragColor = vec4(baseColor, alpha * light);
 	gl_FragColor.a *= 1. - smoothstep(-0.015, -0.02, vPos.y);
 	// gl_FragColor = particleMix;
-}
-`;
+}`;

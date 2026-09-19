@@ -1,5 +1,5 @@
-export const homeReflectorCopyFrag = /* glsl */ `
-precision highp float;
+// ported verbatim from the source engine
+export const homeReflectorCopyFrag = /* glsl */ `precision highp float;
 precision highp int;
 #define GLSLIFY 1
 

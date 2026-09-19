@@ -1,5 +1,5 @@
-export const homeLandFogFrag = /* glsl */ `
-#define GLSLIFY 1
+// ported verbatim from the source engine
+export const homeLandFogFrag = /* glsl */ `#define GLSLIFY 1
 varying vec3 vWorldPosition;
 
 uniform vec3 u_baseColor;
@@ -24,5 +24,4 @@ void main() {
 	float depth = gl_FragCoord.z / gl_FragCoord.w;
 	float fogFactor = smoothstep( fogNear, fogFar, depth );
 	gl_FragColor.rgb = mix( gl_FragColor.rgb, fogColor, fogFactor );
-}
-`;
+}`;

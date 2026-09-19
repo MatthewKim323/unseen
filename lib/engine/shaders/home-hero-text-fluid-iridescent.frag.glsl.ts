@@ -1,5 +1,5 @@
-export const homeHeroTextFluidIridescentFrag = /* glsl */ `
-#define GLSLIFY 1
+// ported verbatim from the source engine
+export const homeHeroTextFluidIridescentFrag = /* glsl */ `#define GLSLIFY 1
 varying vec2 vUv;
 
 uniform sampler2D uTexture;
@@ -92,5 +92,4 @@ void main() {
 	color = max(vec3(0.13), color);
 	gl_FragColor.rgb = color;
 	gl_FragColor.a *= tex.a * uOpacity;
-}
-`;
+}`;

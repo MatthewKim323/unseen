@@ -32,7 +32,7 @@ flags: firstLoad, allowControl=false, allowSwitch=true, itemOpen=false, introFin
 - `introTextGroup`:
   - child 0: troika Text `<BRAND>` (6 caps), font Neue Montreal, `fontSize: camera.scale.x === 2 ? 85 : 170`, `letterSpacing -0.03`, anchor center/middle, color white, `textAlign center`, material = ShaderMaterial(world-intro-text-flicker.*, `u_time 0, u_strength 1, u_opacity 0`, `depthTest false`) (6 vertical bands flicker until `u_strength` → 0).
   - child 1: troika Text `WORLD`, font Saol Display (LightItalic), `fontSize: scale.x === 2 ? 91 : 178`, `letterSpacing -0.03`, center/middle, white, `material.opacity 0`, `depthTest false`, `position.y = scale.x === 2 ? 6 : 11`.
-  - after both sync: `gap = (2*t0.bbox.max.x - 2*t1.bbox.max.x) / 2`; `unseenWordPos = -t0.bbox.max.x + gap`; `worldWordPos = t1.bbox.max.x + gap - 20` (`+7` more when `scale.x === 2`). If `firstLoad`: after loader hidden → `playIntro(0)`.
+  - after both sync: `gap = (2*t0.bbox.max.x - 2*t1.bbox.max.x) / 2`; `brandWordPos = -t0.bbox.max.x + gap`; `worldWordPos = t1.bbox.max.x + gap - 20` (`+7` more when `scale.x === 2`). If `firstLoad`: after loader hidden → `playIntro(0)`.
 - `addIntroPost()`:
   - `renderPass` RenderPass(scene, camera) "World" idx 50, `enabled = firstLoad`.
   - `savePass` SavePass(RT w*pr × fullHeight*pr, Linear, no depth) "World Final" idx 56, disabled.
@@ -151,7 +151,7 @@ if (!isTouch) { mouse-parallax recipe: cameraZOffset 100, angles 0.135/0.035, mu
 | 0 | sphere.scale | 500 | `hasVisited ? 2 : 3`, expo.out |
 | `hasVisited ? "<1" : "<"` | text0 u_opacity | 1 | 0.25, expo.out |
 | `">0.5"` | text0 u_strength | 0 | 0.2, power2.out |
-| `">0.3"` | text0.position.x | unseenWordPos | default (1 / 1.5, expo.inOut) |
+| `">0.3"` | text0.position.x | brandWordPos | default (1 / 1.5, expo.inOut) |
 | `"<"` | text1.position.x | worldWordPos | default |
 | `"<"` | text1.material.opacity | 1 | default |
 | (first visit only) `"<"` | introWrap | set visibility visible | |

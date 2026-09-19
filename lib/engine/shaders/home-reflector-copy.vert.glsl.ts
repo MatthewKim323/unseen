@@ -1,5 +1,5 @@
-export const homeReflectorCopyVert = /* glsl */ `
-precision highp float;
+// ported verbatim from the source engine
+export const homeReflectorCopyVert = /* glsl */ `precision highp float;
 precision highp int;
 #define GLSLIFY 1
 
@@ -11,5 +11,4 @@ varying vec2 vUv;
 void main() {
     vUv = uv;
     gl_Position = vec4(position, 1.0 );
-}
-`;
+}`;

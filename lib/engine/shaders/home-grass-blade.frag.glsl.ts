@@ -1,5 +1,5 @@
-export const homeGrassBladeFrag = /* glsl */ `
-precision highp float;
+// ported verbatim from the source engine
+export const homeGrassBladeFrag = /* glsl */ `precision highp float;
 #define GLSLIFY 1
 
 uniform vec3 cameraPosition;
@@ -37,5 +37,4 @@ void main() {
 	float depth = gl_FragCoord.z / gl_FragCoord.w;
 	float fogFactor = smoothstep( fogNear, fogFar, depth );
 	gl_FragColor.rgb = mix( gl_FragColor.rgb, fogColor, fogFactor );
-}
-`;
+}`;

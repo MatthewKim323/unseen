@@ -1,5 +1,5 @@
-export const homeWaterReflectorVert = /* glsl */ `
-#define GLSLIFY 1
+// ported verbatim from the source engine
+export const homeWaterReflectorVert = /* glsl */ `#define GLSLIFY 1
 varying vec4 vMirrorCoord;
 varying vec2 vUv;
 varying vec3 vWorldPosition;
@@ -19,5 +19,4 @@ void main () {
 	mvPosition = modelViewMatrix * mvPosition;
 
 	gl_Position = projectionMatrix * mvPosition;
-}
-`;
+}`;

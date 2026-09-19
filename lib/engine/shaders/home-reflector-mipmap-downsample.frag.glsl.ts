@@ -1,5 +1,5 @@
-export const homeReflectorMipmapDownsampleFrag = /* glsl */ `
-#define GLSLIFY 1
+// ported verbatim from the source engine
+export const homeReflectorMipmapDownsampleFrag = /* glsl */ `#define GLSLIFY 1
 varying vec2 vUv;
 
 uniform sampler2D map;
@@ -99,5 +99,4 @@ void main() {
     for ( int i = 0; i < SAMPLES; i ++ ) {
         gl_FragColor += samples[ i ] * weights[ i ];
     }
-}
-`;
+}`;
