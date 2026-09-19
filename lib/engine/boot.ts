@@ -131,6 +131,12 @@ function fallbackFirstEnter() {
 
 export function bootEngine() {
   if (booted || typeof window === "undefined") return store;
+  // Fast Refresh re-evaluates this module with a fresh `booted` while the old engine, its router and
+  // its listeners stay live on the page. A second engine would run every transition twice, so reload.
+  if (window.store?.Highway) {
+    window.location.reload();
+    return store;
+  }
   booted = true;
   initStore();
   registerModules();
