@@ -3436,11 +3436,7 @@ nav a {
   width: 5.6875rem;
   z-index: 100;
 }
-@media (min-width: bp("md")) {
-  .grid-toggle {
-    bottom: 2rem;
-  }
-}
+/* source rule with an invalid media query (never applied) omitted */
 .post-type-archive-project .grid-toggle {
   opacity: 1;
   transition:
