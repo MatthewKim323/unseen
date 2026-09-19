@@ -1,0 +1,16 @@
+:root {
+  --color-1: rgb(0, 0, 0); /* used 393x */
+  --color-2: rgb(33, 33, 33); /* used 239x */
+  --color-3: rgb(66, 66, 66); /* used 98x */
+  --color-4: rgb(255, 255, 255); /* used 20x */
+  --color-5: rgb(214, 214, 214); /* used 19x */
+  --color-6: rgb(239, 222, 217); /* used 7x */
+  --color-7: rgb(231, 231, 231); /* used 4x */
+  --color-8: rgb(250, 246, 244); /* used 2x */
+  --color-9: rgb(241, 237, 235); /* used 1x */
+  --color-10: rgba(0, 0, 0, 0.5); /* used 1x */
+  --font-1: "Neue Montreal", system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; /* used 511x */
+  --font-2: "Neue Montreal", sans-serif; /* used 92x */
+  --font-3: "Saol Display", Georgia, Cambria, "Times New Roman", Times, serif; /* used 85x */
+  --font-4: Times; /* used 49x */
+}

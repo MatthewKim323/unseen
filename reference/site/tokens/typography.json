@@ -1,0 +1,186 @@
+{
+ "fontFamilies": [
+  {
+   "value": "\"Neue Montreal\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif",
+   "usage": 511
+  },
+  {
+   "value": "\"Neue Montreal\", sans-serif",
+   "usage": 92
+  },
+  {
+   "value": "\"Saol Display\", Georgia, Cambria, \"Times New Roman\", Times, serif",
+   "usage": 85
+  },
+  {
+   "value": "Times",
+   "usage": 49
+  }
+ ],
+ "sizes": [
+  {
+   "value": "17.28px",
+   "usage": 76
+  },
+  {
+   "value": "90px",
+   "usage": 50
+  },
+  {
+   "value": "28.8px",
+   "usage": 36
+  },
+  {
+   "value": "18.72px",
+   "usage": 33
+  },
+  {
+   "value": "14.4px",
+   "usage": 22
+  },
+  {
+   "value": "11.52px",
+   "usage": 20
+  },
+  {
+   "value": "57.6px",
+   "usage": 19
+  },
+  {
+   "value": "15.12px",
+   "usage": 13
+  },
+  {
+   "value": "10.08px",
+   "usage": 11
+  },
+  {
+   "value": "9px",
+   "usage": 5
+  },
+  {
+   "value": "16.2px",
+   "usage": 2
+  },
+  {
+   "value": "7.2px",
+   "usage": 1
+  },
+  {
+   "value": "19.8px",
+   "usage": 1
+  },
+  {
+   "value": "86.4px",
+   "usage": 1
+  },
+  {
+   "value": "12.96px",
+   "usage": 1
+  }
+ ],
+ "weights": [
+  {
+   "value": "400",
+   "usage": 254
+  },
+  {
+   "value": "300",
+   "usage": 35
+  },
+  {
+   "value": "500",
+   "usage": 1
+  },
+  {
+   "value": "700",
+   "usage": 1
+  }
+ ],
+ "lineHeights": [
+  {
+   "value": "22.464px",
+   "usage": 56
+  },
+  {
+   "value": "90px",
+   "usage": 50
+  },
+  {
+   "value": "16.848px",
+   "usage": 21
+  },
+  {
+   "value": "21.6px",
+   "usage": 20
+  },
+  {
+   "value": "19.008px",
+   "usage": 20
+  },
+  {
+   "value": "31.68px",
+   "usage": 19
+  },
+  {
+   "value": "86.4px",
+   "usage": 18
+  },
+  {
+   "value": "28.8px",
+   "usage": 16
+  },
+  {
+   "value": "17.28px",
+   "usage": 15
+  },
+  {
+   "value": "12.96px",
+   "usage": 13
+  },
+  {
+   "value": "18.72px",
+   "usage": 13
+  },
+  {
+   "value": "15.12px",
+   "usage": 11
+  },
+  {
+   "value": "11.52px",
+   "usage": 5
+  },
+  {
+   "value": "9px",
+   "usage": 5
+  },
+  {
+   "value": "24.3px",
+   "usage": 2
+  },
+  {
+   "value": "16.56px",
+   "usage": 2
+  },
+  {
+   "value": "10.8px",
+   "usage": 1
+  },
+  {
+   "value": "43.2px",
+   "usage": 1
+  },
+  {
+   "value": "69.12px",
+   "usage": 1
+  },
+  {
+   "value": "19.8px",
+   "usage": 1
+  },
+  {
+   "value": "77.76px",
+   "usage": 1
+  }
+ ]
+}

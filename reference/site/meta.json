@@ -1,0 +1,51 @@
+{
+  "name": "site",
+  "capturedAt": "2026-09-19T04:45:07.634Z",
+  "brand": "Nocturne",
+  "stack": {
+    "framework": "unknown",
+    "framer": false,
+    "framerMotion": false,
+    "webflow": false,
+    "lenis": false,
+    "gsap": false,
+    "three": true,
+    "spline": false,
+    "notes": [
+      "1 canvas element(s): WebGL / 2D drawing to port (find the module that draws it)."
+    ]
+  },
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "tablet",
+      "width": 1024,
+      "height": 900
+    },
+    {
+      "name": "tablet-810",
+      "width": 810,
+      "height": 900
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "docHeights": {
+    "desktop": 900,
+    "tablet": 900,
+    "tablet-810": 900,
+    "mobile": 844
+  },
+  "revealMethod": "wheel",
+  "unrevealed": 0,
+  "animationCount": 35,
+  "assetCount": 95,
+  "errors": []
+}
