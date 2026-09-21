@@ -3516,3 +3516,11 @@ nav a {
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
+
+/* chrome removed: header (logo, nav, menu toggle) and footer (mute, cta, world, copyright).
+   Markup stays because engine classes query these js- hooks; hidden here instead. */
+.header,
+.footer,
+.footer > * {
+  display: none !important;
+}
