@@ -5,7 +5,7 @@ import Shell, { ShellPost } from "@/components/Shell";
 import EngineRoot from "@/components/EngineRoot";
 
 export const metadata: Metadata = {
-  title: "Nocturne Studio® - Brand, Digital & Motion",
+  title: "Matthew Kim",
   description:
     "Nocturne is a brand, digital and motion studio creating refreshingly unexpected ideas and striking visuals that help bold brands cut through the noise.",
 };

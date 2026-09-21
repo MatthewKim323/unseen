@@ -127,7 +127,6 @@ export class HomeContact {
   textRT!: WebGLRenderTarget;
   homeText!: Group & { bbox?: Box3 };
   introText!: any;
-  line1!: any;
   line2!: any;
   homeTextMesh!: Mesh<PlaneGeometry, ShaderMaterial>;
   textFluidSim!: any;
@@ -471,7 +470,7 @@ export class HomeContact {
 
     this.introText = new Text();
     Object.assign(this.introText, {
-      text: 'A BRAND, DIGITAL & MOTION STUDIO',
+      text: '13X HACKATHON WINNER',
       font: o.Gl.webglFonts['Neue Montreal'].url,
       fontSize: 0.0014,
       letterSpacing: -0.01,
@@ -481,28 +480,13 @@ export class HomeContact {
       sdfGlyphSize: o.Gl.webglFonts['Neue Montreal'].sdfGlyphSize,
       textAlign: 'center',
     });
-    this.introText.position.y = this.introText.fontSize / 2 + 0.0082;
+    this.introText.position.y = 0.009 / 2 + this.introText.fontSize / 2 + 0.0012;
     this.introText.sync();
     this.homeText.add(this.introText);
 
-    this.line1 = new Text();
-    Object.assign(this.line1, {
-      text: 'Creating the',
-      font: o.Gl.webglFonts['Saol Display'].url,
-      fontSize: 0.009,
-      letterSpacing: -0.04,
-      anchorX: 'center',
-      anchorY: 'middle',
-      color: 3487029,
-      sdfGlyphSize: o.Gl.webglFonts['Saol Display'].sdfGlyphSize,
-    });
-    this.line1.position.y = this.line1.fontSize / 2 - 4e-4;
-    this.line1.sync();
-    this.homeText.add(this.line1);
-
     this.line2 = new Text();
     Object.assign(this.line2, {
-      text: 'unexpected',
+      text: 'Matthew Kim',
       font: o.Gl.webglFonts['Neue Montreal'].url,
       fontSize: 0.009,
       letterSpacing: -0.02,
@@ -512,7 +496,6 @@ export class HomeContact {
       sdfGlyphSize: o.Gl.webglFonts['Neue Montreal'].sdfGlyphSize,
       textAlign: 'center',
     });
-    this.line2.position.y = -this.line2.fontSize / 2 + 4e-4;
     this.line2.sync(() => {
       this.homeText.bbox = new Box3().setFromObject(this.homeText);
       this.homeText.bbox.getSize(this.homeTextMesh.scale);
